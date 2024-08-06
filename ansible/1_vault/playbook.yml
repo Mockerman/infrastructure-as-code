@@ -1,0 +1,22 @@
+---
+- name: Install Nginx on Amazon Linux
+  hosts: TestServer
+  become: yes
+  tasks:
+    - name: Ensure Nginx is installed
+      apt:
+        name: nginx
+        state: present
+    - name: Ensure Git is installed
+      apt:
+        name: git
+        # update_cache: yes
+        state: present
+    - name: Check Git version
+      shell: git -v
+      register: git_version_output
+    
+    - name: Display Git Version
+      debug: 
+        var: git_version_output.stdout
+    

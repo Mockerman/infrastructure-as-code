@@ -1,0 +1,9 @@
+---
+- name: Use Ansible Vault
+  hosts: server
+  vars_files:
+    - secrets.yml
+  tasks: 
+    - name: Show Password
+      debug:
+        var: meinPasswort

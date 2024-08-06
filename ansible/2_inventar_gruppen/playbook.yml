@@ -1,0 +1,10 @@
+---
+- name: Install Nginx on Ubuntu
+  hosts: server
+  become: yes
+  tasks:
+    - name: Ensure Nginx is installed
+      apt:
+        name: nginx
+        state: present
+    

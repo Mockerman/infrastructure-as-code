@@ -1,0 +1,17 @@
+---
+- name: Use Ansible Vault
+  hosts: sub_group_1
+  vars_files:
+    - secrets.yml
+  tasks: 
+    - name: Show Password
+      debug:
+        var: meinPasswort
+- name: Use Ansible Vault2
+  hosts: sub_group_2
+  vars_files:
+    - secrets.yml
+  tasks: 
+    - name: Show Password
+      debug:
+        var: meinPasswort
