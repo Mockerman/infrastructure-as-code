@@ -1,0 +1,9 @@
+- name: Install Nginx on web servers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Stelle sicher, dass nginx installiert ist
+      apt: # je nach Distro kommt hier yum
+        name: nginx
+        state: present
+      
